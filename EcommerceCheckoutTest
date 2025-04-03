@@ -1,0 +1,31 @@
+package sel.Pro;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class EcommerceCheckoutTest {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://sauce-demo.myshopify.com/");
+		driver.manage().window().maximize();
+		
+		WebElement ved = driver.findElement(By.cssSelector("#product-1 > img"));
+		ved.click();
+		
+		WebElement ved1 = driver.findElement(By.cssSelector("#add"));
+		ved1.click();
+		Thread.sleep(3000);
+		
+		WebElement ved2 = driver.findElement(By.cssSelector("#minicart > a.checkout"));
+		ved2.click();
+		
+		WebElement ved3 = driver.findElement(By.cssSelector("#checkout"));
+		ved3.click();
+			
+
+	}
+
+}
